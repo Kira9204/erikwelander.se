@@ -1,0 +1,32 @@
+{% for E in workExperience %}
+    <div id="{{ E['anchor'] }}" style="position: relative; left: -500px; top: -200px;"></div> <!-- Anchor alignment fix -->
+    <ul class="horizontal-list-cv-section">
+        <li>
+            <img src="/img/svg/{{ E['headerImg']|raw }}" alt="{{ E['headerImg'] }}" width="40px">
+            <h3>{{ E['header']|raw }}</h3>
+        </li>
+    </ul>
+    <div class="line-crossing color-orange-background margin-medium-bot"></div>
+    <table class="work-item-table">
+        {% for ET in E['events'] %}
+            <tr>
+                {% if ET['timeTo'] is empty %}
+                    <td class="work-item-table-td-period">{{ ET['timeFrom']|raw }} &ndash;&gt; </td>
+                {% else %}
+                    <td class="work-item-table-td-period">{{ ET['timeFrom'] }} &ndash; {{ ET['timeTo']|raw }}</td>
+                {% endif %}
+                <td class="padding-0">
+                    <div class="work-item-title-position-text">{{ ET['title']|raw }}</div>
+                    <div class="work-item-title-workplace-text">{{ ET['workplace']|raw }}</div>
+                    <div class="work-item-title-workplace-text-keywords">
+                        {% if ET['keywords'] is not empty %}
+                            {{ ET['keywords']|join(', ') }}.
+                        {% endif %}
+                    </div>
+                    <div class="work-item-title-workplace-description-text">{{ ET['description']|raw }}</div>
+                </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endfor %}

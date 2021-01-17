@@ -1,0 +1,40 @@
+{% set pageModified = '2020-01-11' %}
+{% include 'parts/headerSegment.twig' with {
+    'name': _self,
+    'title': 'Erik Welander',
+    'lang': 'sv-SE',
+    'pageModified': pageModified,
+    'css': ['/css/main']
+}
+%}
+
+<body>
+{% include 'parts/topToolbar.twig' with {
+    'locale': locale,
+    'currentPage': '/',
+    'downloadPdf': T['topbar']['downloadPdf'],
+    'workExperience': T['cvSections']['workExperience']['container']['header'],
+    'education': T['cvSections']['education']['container']['header'],
+    'activities': T['cvSections']['activities']['container']['header']
+} %}
+{% include 'parts/profileSidebar.twig' with {
+    'T': T['sidebar'],
+    'pageModified': pageModified
+}
+%}
+    <div class="page-main-content-center">
+        {% include 'parts/cvSegment.twig' with {
+            'workExperience': T['cvSections']['workExperience']
+        }%}
+
+        {% include 'parts/cvSegment.twig' with {
+            'workExperience': T['cvSections']['education']
+        }%}
+
+        {% include 'parts/cvSegment.twig' with {
+            'workExperience': T['cvSections']['activities']
+        }%}
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+</html>

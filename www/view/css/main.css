@@ -1,0 +1,431 @@
+<?php
+header("Content-type: text/css");
+    $pageTopToolbarHeight = 40;
+    $sidebarWidth = 390;
+    $sidebarTranslateClosed = -350;
+    $pageMainContentCenterLeft = $sidebarWidth+30;
+    $contentPositionSidebarClosed = $sidebarWidth+$sidebarTranslateClosed+10;
+    $animationTime = 0.4;
+
+
+    $defaultFontSize = 16;
+?>
+
+/*
+/////////////////////////////////////////////////////////////////////////////
+// Name:        main.css (PHP Generated)
+// Author:      Erik Welander (erik.welander@hotmail.com)
+// Modified:    2021-01-12
+// Copyright:   Erik Welander
+/////////////////////////////////////////////////////////////////////////////
+*/
+/*Import OpenSans from Googles CDN*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+/*
+
+*Make sure that the html and body elements truly occupies 100% of the available screen-space.
+*This also enables us to use height: 100% for whild elements right at start.
+*/
+
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    font-family: "Open Sans" !important;
+    background-color: #eff8ff;
+    /*Increase the spacing juuust a bit */
+    letter-spacing: 0.1px;
+}
+
+a {
+    color: black;
+    /*text-decoration: none;*/
+}
+
+.color-orange-background {
+    background-color: rgb(227, 90, 37);
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.margin-small {
+    margin: 5px;
+}
+
+.margin-small-left {
+    margin-left: 5px;
+}
+
+.margin-small-right {
+    margin-right: 5px;
+}
+
+.margin-medium-bot {
+    margin-bottom: 10px;
+}
+
+.margin-medium {
+    margin: 10px;
+}
+
+.padding-0 {
+    padding: 0;
+}
+
+.center-block {
+    margin: 0 auto;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.letter-spacing-large {
+    letter-spacing: 8px;
+}
+
+.text-style-italic {
+    font-style: italic;
+}
+
+.text-style-bold {
+    font-weight: bold;
+}
+
+.text-style-underline {
+    text-decoration: underline;
+}
+
+.text-style-normal {
+    font-weight: normal;
+}
+
+.text-no-decoration {
+    text-decoration: none;
+}
+
+.text-size-70 {
+    font-size: <?=$defaultFontSize*0.7?>px;
+}
+
+.text-size-80 {
+    font-size: <?=$defaultFontSize*0.8?>px;
+}
+
+.text-size-90 {
+    font-size: <?=$defaultFontSize*0.9?>px;
+}
+
+.text-size-100 {
+    font-size: <?=$defaultFontSize?>px;
+}
+
+.text-size-110 {
+    font-size: <?=$defaultFontSize*1.1?>px;
+}
+
+.text-size-120 {
+    font-size: <?=$defaultFontSize*1.2?>px;
+}
+
+.text-size-140 {
+    font-size: <?=$defaultFontSize*1.4?>px;
+}
+
+.text-size-200 {
+    font-size: <?=$defaultFontSize*2?>px;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.fill-width {
+    width: 100%;
+}
+
+.fill-heigth {
+    height: 100%;
+}
+
+.display-block {
+    display: block;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.horizontal-list-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.horizontal-list-contact >li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.vertical-list-contact {
+    list-style: none;
+    padding: 0;
+}
+
+.vertical-list-contact >li:first-child {
+    display: block;
+    margin-left: 10px;
+    font-size: 200%;
+    vertical-align: middle;
+}
+
+.vertical-list-contact >li {
+    display: block;
+    margin-left: 20px;
+    font-size: 150%;
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+
+.horizontal-list-cv-section {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.horizontal-list-cv-section >li {
+    display: block;
+    padding: 0;
+    font-size: 150%;
+    margin: 0 0 10px 0;
+    vertical-align: middle;
+}
+
+.horizontal-list-cv-section >li >img {
+    width: 40px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.horizontal-list-cv-section >li >h3 {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.line-crossing {
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+}
+
+.contact-icon-info {
+    width: 32px;
+}
+
+.contact-icon-smaller {
+    width: 24px;
+}
+
+.contact-icon-item {
+    vertical-align: top;
+    display: inline-block;
+    width: 80px;
+}
+
+.contact-icon-image-size {
+    width: 40px;
+    height: 40px;
+}
+
+.contact-icon-image-description {
+    display: block;
+    color: black;
+}
+
+
+/* Main page css */
+.page-top-toolbar {
+    height: <?=$pageTopToolbarHeight?>px;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    box-shadow: gray 0px 5px 10px 0px;
+
+    display: grid;
+    grid-template-columns: <?=$sidebarWidth?>px auto;
+}
+
+.page-top-toolbar-icon-and-text-button {
+    align-items: center;
+    display: flex;
+    vertical-align: middle;
+}
+
+#page-main-content-sidebar-content {
+    overflow: auto;
+}
+
+.page-main-content-sidebar {
+    position: fixed;
+    width: <?=$sidebarWidth?>px;
+    height: 100%;
+    margin-top: <?=$pageTopToolbarHeight?>px;
+    z-index: 100;
+    box-shadow: gray 5px 20px 20px 0px;
+}
+
+.page-main-content-sidebar--opened {
+    animation: page-main-content-sidebar--opened-animation <?=$animationTime?>s forwards;
+}
+
+.page-main-content-sidebar--closed {
+    animation: page-main-content-sidebar--closed-animation <?=$animationTime?>s forwards;
+}
+
+.page-main-content-sidebar-content--hidden {
+    display: none;
+}
+
+@keyframes page-main-content-sidebar--opened-animation {
+    0% { transform: translateX(<?=$sidebarTranslateClosed?>px); }
+    100% { transform: translateX(0%); }
+}
+
+@keyframes page-main-content-sidebar--closed-animation {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(<?=$sidebarTranslateClosed?>px); }
+}
+
+.page-main-content-sidebar-open-close {
+    position: absolute;
+    width: 32px;
+    right: 6px;
+    top: 50%;
+    cursor: pointer;
+
+    overflow: auto;
+}
+
+.page-main-content-sidebar-open-close--opened {
+    animation: scaleFlipAnimation1 <?=$animationTime?>s forwards;
+}
+
+.page-main-content-sidebar-open-close--closed {
+    animation: scaleFlipAnimationM1 <?=$animationTime?>s forwards;
+}
+
+@keyframes scaleFlipAnimationM1 {
+    100% { transform: scaleX(-1); }
+}
+
+@keyframes scaleFlipAnimation1 {
+    100% { transform: scaleX(1); }
+}
+
+.profile-sidebar-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid black;
+    padding: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-clip: content-box;
+    background-size: 200px 200px;
+    background-image: url("../img/png/Erik_Welander.png");
+    margin-top: 5px;
+}
+
+.page-main-content-center {
+    position: relative;
+    top: <?=$pageTopToolbarHeight+40?>px;
+    left: <?=$pageMainContentCenterLeft?>px;
+}
+
+.page-main-content-center--opened {
+    animation: page-main-content-center--opened-animation <?=$animationTime?>s forwards;
+}
+
+.page-main-content-center--closed {
+    animation: page-main-content-center--closed-animation <?=$animationTime?>s forwards;
+}
+
+@keyframes page-main-content-center--opened-animation {
+    0% { left: <?=$contentPositionSidebarClosed?>px; }
+    100% { left: <?=$pageMainContentCenterLeft?>px; }
+}
+
+@keyframes page-main-content-center--closed-animation {
+    0% { left: <?=$pageMainContentCenterLeft?>px; }
+    100% { left: <?=$contentPositionSidebarClosed?>px; }
+}
+
+#copyright {
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+    font-size: 90%;
+}
+
+.work-item-table {
+    width: 100%;
+    border-spacing: 0 5px;
+}
+
+.work-item-table-td-period {
+    width: 200px;
+    font-size: 120%;
+    letter-spacing: 1px;
+    padding: 0;
+    vertical-align: top;
+}
+
+.work-item-title-position-text {
+    font-size: 120%;
+    color: red;
+    font-weight: bold;
+}
+
+.work-item-title-workplace-text {
+    font-size: 110%;
+    font-style: italic;
+}
+
+.work-item-title-workplace-text-keywords {
+    font-size: 90%;
+    font-style: italic;
+    margin-top: 2px;
+    margin-bottom: 4px;
+}
+
+.work-item-title-workplace-description-text {
+    font-size: 100%;
+    margin-top: 6px;
+    margin-bottom: 12px;
+}
+
+.list-education-special {
+    margin: 0;
+    padding: 0;
+}
+
+.list-education-special li {
+    display: inline-block;
+    width: 350px;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
+.list-education-special li:before {
+    content: 'o';
+    padding: 5px;
+    margin-right: 5px;
+    color: orange;
+    display: inline-block;
+}

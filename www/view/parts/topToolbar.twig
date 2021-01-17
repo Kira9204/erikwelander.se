@@ -1,0 +1,48 @@
+<div class="page-top-toolbar color-orange-background">
+    <div class="page-top-toolbar-left center-block">
+        <ul class="horizontal-list-contact center-text">
+            <li class="select-language-option">
+                <a href="{{ currentPage }}?lang=sv"><img src="/img/png/swedish-flag.png" alt="swedish-flag.png"></a>
+            </li>
+            <li class="select-language-option">
+                <a href="{{ currentPage }}?lang=en"><img src="/img/png/american-flag.png" alt="american-flag.png"></a>
+            </li>
+            <li>
+                <a href="/pdf/Erik_Welander_CV_{{ locale|lower }}.pdf" target="_blank">
+                    <div class="page-top-toolbar-icon-and-text-button vertical-align-middle">
+                        <img class="vertical-align-middle margin-small-left margin-small-right" src="/img/svg/download.svg" alt="download.svg" width="40px">
+                        <span class="text-style-bold">{{ downloadPdf }}</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <ul class="horizontal-list-contact center-text">
+            <li>
+                <a href="#work-experience">
+                    <div class="page-top-toolbar-icon-and-text-button vertical-align-middle">
+                        <img class="vertical-align-middle margin-small-left margin-small-right" src="/img/svg/portfolio.svg" alt="download.svg" width="40px">
+                        <span class="text-style-bold">{{ workExperience }}</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#education">
+                    <div class="page-top-toolbar-icon-and-text-button vertical-align-middle">
+                        <img class="vertical-align-middle margin-small-left margin-small-right" src="/img/svg/university.svg" alt="download.svg" width="40px">
+                        <span class="text-style-bold">{{ education }}</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#activities">
+                    <div class="page-top-toolbar-icon-and-text-button vertical-align-middle">
+                        <img class="vertical-align-middle margin-small-left margin-small-right" src="/img/svg/group.svg" alt="download.svg" width="40px">
+                        <span class="text-style-bold">{{ activities }}</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
